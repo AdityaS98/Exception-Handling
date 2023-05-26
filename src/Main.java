@@ -7,40 +7,41 @@ public class Main {
      * @author Dell
      */
 
-    public static class MoodAnalyser {
-
+    public static class MoodAnalyser{
         /*
-         * Method to check message contain sad word or not
+         * To define method to find mood
          */
-        public String analyseMood(String message) {
-
-            if (message.contains("sad")) {
-                return "SAD";
+        public String analyseMood1(String message) {
+            try {
+                if(message.contains("NULL"));
             }
-
-            return "HAPPY";
+            catch(Exception e) {
+                return "HAPPY";
+            }
+            if(message.contains("sad"))
+                return "SAD";
+            else
+                return "HAPPY";
         }
 
         /**
          * This is main method of program
-         *
          * @param args
          */
         public static void main(String[] args) {
 
-            MoodAnalyser mood = new MoodAnalyser();
+            MoodAnalyser mood2 = new MoodAnalyser();
+
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Enter your message");
-
-            String message = sc.next();
-
             /*
-             * To call method with MoodAnalyser object
+             * In this use case we are giving null message to handle
+             * this invalid message
              */
-            System.out.println(mood.analyseMood(message));
+
+            String message ="NULL";
+
+            System.out.println(mood2.analyseMood1(message));
         }
-
     }
-}
-
+    }
